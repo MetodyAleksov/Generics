@@ -1,24 +1,26 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace BoxOfT
 {
     public class BoxOfT<T>
     {
-        List<T> elements;
+        private Stack<T> elements;
+        public int Count { get; private set; }
         public BoxOfT()
         {
-            elements = new List<T>();
+            elements = new Stack<T>();
         }
 
         public void Add(T element)
         {
-            elements.Add(element);
+            elements.Push(element);
+            Count = elements.Count;
         }
         public T Remove()
         {
-            T removedEl = elements[0];
-            elements.RemoveAt(0);
-            return removedEl;
+            Count--;
+            return elements.Pop();
         }
     }
 }
