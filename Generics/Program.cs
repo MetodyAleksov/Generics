@@ -2,11 +2,11 @@
 
 namespace BoxOfT
 {
-    public class Program
+    public class StartUp
     {
         static void Main(string[] args)
         {
-            Box<int> box = new Box<int>();
+            BoxOfT<int> box = new BoxOfT<int>();
             box.Add(1);
             box.Add(2);
             box.Add(3);
@@ -14,7 +14,6 @@ namespace BoxOfT
             box.Add(4);
             box.Add(5);
             Console.WriteLine(box.Remove());
-
         }
     }
 }

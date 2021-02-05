@@ -2,30 +2,23 @@
 
 namespace BoxOfT
 {
-    public class Box<T>
+    public class BoxOfT<T>
     {
-        public Box()
+        List<T> elements;
+        public BoxOfT()
         {
-            Elements = new List<T>();
+            elements = new List<T>();
         }
-        public Box(List<T> arr)
-            :this()
-        {
-            Elements = arr;
-        }
-        public List<T> Elements { get; set; }
-        public int Count => this.Elements.Count;
 
         public void Add(T element)
         {
-            Elements.Add(element);
+            elements.Add(element);
         }
-        
         public T Remove()
         {
-            T el = Elements[Elements.Count - 1];
-            Elements.RemoveAt(Elements.Count - 1);
-            return el;
+            T removedEl = elements[0];
+            elements.RemoveAt(0);
+            return removedEl;
         }
     }
 }
